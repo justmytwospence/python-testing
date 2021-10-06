@@ -4,12 +4,12 @@ python:
   - 3.6
 before_install:
   - python --version
+install:
+  - pip install -e . 
   - pip install -U pip
   - pip install -U pytest
   - pip install codecov
   - pip install pytest-cov
-install:
-  - pip install ".[test]" .
 script: pytest --cov=. tests
 after_success:
   - codecov 
