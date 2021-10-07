@@ -21,4 +21,4 @@ jobs:
           name: Run linter
           command: |
             . venv/bin/activate
-            flake8 --exclude=venv* --statistics
+            flake8 --statistics src/calculator.py
