@@ -23,3 +23,4 @@ jobs:
             . venv/bin/activate
             flake8 --statistics src/calculator.py
       - store_test_results
+          path: test-results
