@@ -1,8 +1,8 @@
 import random
 
 import pytest
-
 from sort_algorithms import bubble_sort
+
 
 
 class TestBubbleSort():
