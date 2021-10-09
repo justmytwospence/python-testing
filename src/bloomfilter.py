@@ -4,16 +4,7 @@ import pyhash
 
 
 class BloomFilter:
-    """
-    Implements a counting Bloom filter
-    >>> bf = BloomFilter(['foo', 'bar'])
-    >>> bf.add('baz')
-    >>> 'baz' in bf
-    True
-    >>> bf.delete('baz')
-    >>> 'baz' in bf
-    False
-    """
+    """Implements a counting Bloom filter"""
 
     def __init__(self, items=None, size=64):
         self.size = size
@@ -43,16 +34,16 @@ class BloomFilter:
             self.bitmap[bitmap_idx] += 1
 
     def __contains__(self, item):
-        bitmap_idxs = [item_hash %
-                       self.size for item_hash in self.hashes(item)]
+        bitmap_idxs = [item_hash % self.size
+                       for item_hash in self.hashes(item)]
         if all([self.bitmap[i] for i in bitmap_idxs]):
             return True  # MIGHT be present
         else:
             return False  # DEFINITELY not present
 
     def delete(self, item):
-        bitmap_idxs = [item_hash %
-                       self.size for item_hash in self.hashes(item)]
+        bitmap_idxs = [item_hash % self.size
+                       for item_hash in self.hashes(item)]
         for i in bitmap_idxs:
             self.bitmap[i] -= 1
 
