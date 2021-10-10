@@ -13,6 +13,7 @@ def is_palindrome(num):
     else:
         return False
 
+
 def infinite_palindromes():
     num = 0
     while True:
@@ -22,7 +23,6 @@ def infinite_palindromes():
                 num = i
         num += 1
 
-# 01 .send() method -- comment out to run others
 
 pal_gen = infinite_palindromes()
 for i in pal_gen:

@@ -46,7 +46,3 @@ class BloomFilter:
                        for item_hash in self.hashes(item)]
         for i in bitmap_idxs:
             self.bitmap[i] -= 1
-
-
-if __name__ == "__main__":
-    doctest.testmod()
