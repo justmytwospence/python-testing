@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: circleci/python:3.6
       - image: circleci/python:3.7
-    working_directory: ~/repo
     steps:
       - checkout
       - run:
@@ -13,12 +12,15 @@ jobs:
             pip install -U pip
             pip install -r requirements.txt
       - run:
-          name: Run tests 
+          name: Run tests
           command: |
-            pytest -v --cov=src
+            pytest -v --cov=src --junitxml=test-results/junit.xml
       - run:
           name: Run linter
           command: |
             flake8 --statistics src/calculator.py
       - store_test_results:
           path: test-results
+      - run:
+          name: Run codecov
+          command: codecov
