@@ -16,7 +16,6 @@ pyflakes==2.3.1
 pyhash==0.9.3
 pyparsing==2.4.7
 pytest==6.2.5
-pytest-cov==3.0.0
 python-dotenv==0.19.0
 schedule==1.1.0
 toml==0.10.2
