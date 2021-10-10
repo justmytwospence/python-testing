@@ -1,13 +1,13 @@
 import pytest
 
-from dijkstra import AdjacencyListGraph
+from dijkstra import DijkstraGraph
 
 
 class TestGraph:
 
     @pytest.fixture
     def graph(self):
-        g = AdjacencyListGraph()
+        g = DijkstraGraph()
         g.add_node("A")
         g.add_node("B")
         g.add_node("C")

@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 
-class AdjacencyListGraph:
+class DijkstraGraph:
     def __init__(self):
         self.nodes = set()
         self.edges = defaultdict(dict)
