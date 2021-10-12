@@ -8,7 +8,7 @@ class Node:
         self.children = []
 
     def __repr__(self):
-        return f"{self.parent} -> {self.keys} -> {self.children}"
+        return f"{self.keys}"
 
     def __len__(self):
         return len(self.keys)
@@ -69,6 +69,22 @@ class Node:
             self.parent.children.remove(self)
             self.parent._add(self)
 
+    def traverse_preorder(self):
+        keys = [self.keys]
+        for node in self.children:
+            keys.extend(node.traverse_preorder())
+        return keys
+
+    def traverse_inorder(self):
+        if self._is_leaf():
+            return self.keys
+        keys = []
+        for i, child in enumerate(self.children):
+            keys += child.traverse_inorder()
+            if i < len(self.keys):
+                keys.append(self.keys[i])
+        return keys
+
 
 class Tree:
     def __init__(self, root):
@@ -84,3 +100,17 @@ class Tree:
         else:
             self.root._insert(Node(value))
             self._update_root()
+
+    def find(self, value):
+        current_node = self.root
+        while True:
+            if value in current_node.keys:
+                return True
+            elif current_node._is_leaf():
+                return False
+            else:
+                child_index = bisect(current_node.keys, value)
+                current_node = current_node.children[child_index]
+
+    def remove(self, value):
+        pass
