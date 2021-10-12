@@ -1,4 +1,4 @@
-[![<ORG_NAME>](https://circleci.com/gh/justmytwospence/python-testing.svg?style=svg)](<LINK>)
+[![<ORG_NAME>](https://circleci.com/gh/justmytwospence/python-testing.svg?style=shield)](<LINK>)
 
 [![Build Status](https://app.travis-ci.com/justmytwospence/python-testing.svg?branch=main)](https://app.travis-ci.com/justmytwospence/python-testing)
 
