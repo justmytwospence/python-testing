@@ -14,10 +14,10 @@ jobs:
           name: Run tests
           command: |
             pytest -v --cov=src --junitxml=test-results/junit.xml
-      - run:
-          name: Run linter
-          command: |
-            flake8 --statistics
+      # - run:
+      #     name: Run linter
+      #     command: |
+      #       flake8 --statistics
       - store_test_results:
           path: test-results
       - run:
