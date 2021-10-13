@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Run linter
           command: |
-            flake8 --statistics src/calculator.py
+            flake8 --statistics
       - store_test_results:
           path: test-results
       - run:
